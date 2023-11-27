@@ -1,17 +1,73 @@
-function setup() {
-  createCanvas(400, 400);
+let buttonX, buttonY;
 
-  // createButton 함수를 사용하여 버튼 생성
-  let button = createButton('Commit');
-  button.position(10, 10); // 버튼의 위치 설정
-  button.mousePressed(changeBackgroundColor); // 버튼 클릭 시 실행할 함수 지정
+let video;
+
+let menu, flip;
+let shutterBtn;
+
+
+function preload() {
+  menu = loadImage("menu.png");
+  flip = loadImage("flip.png");
+}
+
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  buttonX = width / 2;
+  buttonY = height / 2;
+  
+  video = createCapture(VIDEO);
+  video.size(width, height*0.7);
+  video.hide();
+  
+  layoutDraw();
+  // rectMode 함수를 사용하여 사각형 모드를 CENTER로 설정
+  rectMode(CENTER);
+  
+  
+  captureBtn()
+  shutterBtn = createButton('');
+  shutterBtn.class('shutterBtn');
+  shutterBtn.position(buttonX-(height*0.09)/2, height*0.91-(height*0.09)/2);
+  shutterBtn.size(height*0.09, height*0.09);
+
+
+  
 }
 
 function draw() {
-  // 여기에 그림 그리기 코드 추가
+  image(video, 0, height*0.08);
+  image(menu, width*0.03, height*0.03, width*0.06, height*0.04);
+  image(flip, width*0.88, height*0.03, width*0.06, height*0.04);
+  
+  //image(menu, width*0.03, height*0.03, height*0.08, height*0.04);
+  //image(flip, width*0.94, height*0.03, height*0.08, height*0.04);
 }
 
-function changeBackgroundColor() {
-  // 배경 색상을 무작위로 변경
-  background(random(255), random(255), random(255));
+
+function layoutDraw() {
+  // 상단 레이아웃 박스
+  fill(255);
+  noStroke();
+  rect(0, 0, width, height*0.08);
+  
+  fill(0);
+  noStroke();
+  rect(0, height*0.78, width, height*0.22);
 }
+
+function captureBtn() {
+  fill(255);
+  noStroke();
+  circle(buttonX, height*0.91, height*0.1);
+
+}
+
+
+
+function capture() {
+  background(255);
+}
+
+

@@ -2,6 +2,14 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
 canvas {
   display: block;
 }
+
+.shutterBtn {
+  background-color: white;
+  border : black solid;
+  border-radius : 50%;
+}
+
