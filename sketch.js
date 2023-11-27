@@ -23,12 +23,12 @@ function setup() {
   video = createCapture(VIDEO);
   video.size(width, height*0.7);
   video.hide();
-  
+  //withdraw();
   layoutDraw();
   // rectMode 함수를 사용하여 사각형 모드를 CENTER로 설정
   rectMode(CENTER);
   
-  withdraw();
+  //withdraw();
   
   shutterBtn = createButton('');
   shutterBtn.class('shutterBtn');
@@ -53,7 +53,7 @@ function setup() {
   
 }
 
-function withdraw() {
+function draw() {
   image(video, 0, height*0.08);
   image(menu, width*0.03, height*0.03, width*0.06, height*0.04);
   image(flip, width*0.91, height*0.03, width*0.06, height*0.04);
@@ -93,8 +93,9 @@ function posetab() {
   shutterBtn.hide();
   poseBtn.hide();
   
+  
   fill(255, 153, 0);
-  textSize(20);
+  textSize(50);
   textAlign(CENTER, CENTER);
   text('POSE', buttonX, height*0.825);
   
