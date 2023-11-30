@@ -21,7 +21,7 @@ function setup() {
   buttonY = height / 2;
   
   video = createCapture(VIDEO);
-  video.size(width, height*0.7);
+  video.size(width, height*0.65); // *0.7
   video.hide();
   //withdraw();
   layoutDraw();
@@ -32,8 +32,8 @@ function setup() {
   
   shutterBtn = createButton('');
   shutterBtn.class('shutterBtn');
-  shutterBtn.position(buttonX-(height*0.09)/2, height*0.91-(height*0.09)/2);
-  shutterBtn.size(height*0.09, height*0.09);
+  shutterBtn.position(buttonX-(height*0.12)/2, height*0.88-(height*0.12)/2);
+  shutterBtn.size(height*0.12, height*0.12); // 0.09 & 0.91
   captureBtn();
   
   autoBtn = createButton('Auto');
@@ -43,7 +43,7 @@ function setup() {
   
   poseBtn = createButton('POSE');
   poseBtn.class('poseBtn');
-  poseBtn.position(width-(width*0.2), height*0.91-(height*0.09)/2);
+  poseBtn.position(width-(width*0.2), height*0.88-(height*0.09)/2);
   poseBtn.size(height*0.09, height*0.09);
   
   
@@ -68,7 +68,7 @@ function layoutDraw() {
   
   fill(0);
   noStroke();
-  rect(0, height*0.78, width, height*0.22);
+  rect(0, height*0.73, width, height*0.22);
 }
 
 // 캡쳐버튼 근처 꾸미기 역할 함수
@@ -76,7 +76,7 @@ function captureBtn() {
   
   fill(255);
   noStroke();
-  circle(buttonX, height*0.91, height*0.1);
+  circle(buttonX, height*0.88, height*0.13); // 0.13->0.1
   
 }
 
@@ -89,17 +89,22 @@ function posetab() {
   isVisible = !isVisible;
   fill(0);
   noStroke();
-  circle(buttonX, height*0.91, height*0.11);
+  circle(buttonX, height*0.88, height*0.14);
   shutterBtn.hide();
   poseBtn.hide();
   
   
   fill(255, 153, 0);
-  textSize(50);
+  textSize(32);
   textAlign(CENTER, CENTER);
-  text('POSE', buttonX, height*0.825);
+  text('POSE', buttonX, height*0.77); //height*0.825
   
   
+  // 포즈 사진 모음
+  fill(255);
+  noStroke();
+  rect(width*0.1, height*0.86, height*0.13, height*0.13);
+
   
 }
 
