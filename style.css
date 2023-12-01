@@ -21,6 +21,7 @@ canvas {
   
   color: #ff9900;
   text-align: center;
+  justify-content: center;
 }
 
 .poseBtn {
@@ -28,6 +29,7 @@ canvas {
   border-radius : 8px;
   border: none;
   
+  font-size: 32px;
   color: white;
   text-align: center;
   

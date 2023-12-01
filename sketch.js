@@ -14,21 +14,19 @@ function preload() {
   flip = loadImage("flip.png");
 }
 
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   buttonX = width / 2;
   buttonY = height / 2;
   
   video = createCapture(VIDEO);
-  video.size(width, height*0.65); // *0.7
+  video.size(width, height*0.66); // 0.7  0.65
   video.hide();
-  //withdraw();
   layoutDraw();
+  
   // rectMode 함수를 사용하여 사각형 모드를 CENTER로 설정
   rectMode(CENTER);
   
-  //withdraw();
   
   shutterBtn = createButton('');
   shutterBtn.class('shutterBtn');
@@ -38,14 +36,13 @@ function setup() {
   
   autoBtn = createButton('Auto');
   autoBtn.class('autoBtn');
-  autoBtn.position(width*0.91, height*0.7);
+  autoBtn.position(width*0.91, height*0.68);
   autoBtn.size(height*0.05, height*0.05);
   
   poseBtn = createButton('POSE');
   poseBtn.class('poseBtn');
   poseBtn.position(width-(width*0.2), height*0.88-(height*0.09)/2);
-  poseBtn.size(height*0.09, height*0.09);
-  
+  poseBtn.size(height*0.11, height*0.1);
   
   shutterBtn.mousePressed(capture);
   poseBtn.mousePressed(posetab);
@@ -68,7 +65,7 @@ function layoutDraw() {
   
   fill(0);
   noStroke();
-  rect(0, height*0.73, width, height*0.22);
+  rect(0, height*0.73, width, height*0.27);
 }
 
 // 캡쳐버튼 근처 꾸미기 역할 함수
